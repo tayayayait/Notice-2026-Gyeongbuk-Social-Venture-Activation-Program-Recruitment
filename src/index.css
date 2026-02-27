@@ -1,0 +1,162 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 경북 농업 부산물 업사이클링 SaaS — Design Tokens
+   All colors are HSL. Based on 상세서.md v1.0 (2026-02-26).
+   Light theme only.
+*/
+
+@layer base {
+  :root {
+    /* ── Brand Green ── */
+    --brand-green-50: 138 52% 97%;    /* #F2FBF5 */
+    --brand-green-100: 138 44% 91%;   /* #DCF3E4 */
+    --brand-green-600: 140 61% 30%;   /* #1E7B3A */
+    --brand-green-700: 140 61% 25%;   /* #186632 */
+    --brand-green-800: 140 61% 22%;   /* #145A2C */
+
+    /* ── Brand Blue ── */
+    --brand-blue-50: 214 100% 97%;    /* #EFF6FF */
+    --brand-blue-100: 214 95% 93%;    /* #DBEAFE */
+    --brand-blue-600: 217 91% 60%;    /* #2563EB */
+    --brand-blue-700: 224 76% 48%;    /* #1D4ED8 */
+
+    /* ── Neutral ── */
+    --neutral-0: 0 0% 100%;           /* #FFFFFF */
+    --neutral-50: 150 14% 97%;        /* #F7FAF8 */
+    --neutral-100: 210 40% 96%;       /* #F1F5F9 */
+    --neutral-200: 214 32% 91%;       /* #E2E8F0 */
+    --neutral-300: 213 27% 84%;       /* #CBD5E1 */
+    --neutral-400: 215 20% 65%;       /* #94A3B8 */
+    --neutral-600: 215 25% 35%;       /* #475569 */
+    --neutral-700: 215 25% 27%;       /* #334155 */
+    --neutral-900: 222 47% 11%;       /* #0F172A */
+
+    /* ── Semantic ── */
+    --semantic-success: 142 72% 37%;  /* #16A34A */
+    --semantic-warning: 32 95% 44%;   /* #D97706 */
+    --semantic-danger: 0 84% 60%;     /* #DC2626 */
+    --semantic-danger-dark: 0 74% 42%;/* #B91C1C */
+    --semantic-danger-darker: 0 75% 35%;/* #991B1B */
+    --semantic-info: 217 91% 60%;     /* #2563EB */
+
+    /* ── State ── */
+    --state-error-bg: 0 86% 97%;     /* #FEF2F2 */
+    --state-error-border: 0 94% 82%; /* #FCA5A5 */
+    --state-error-fg: 0 74% 42%;     /* #B91C1C */
+    --state-disabled-fg: 215 20% 65%;/* #94A3B8 */
+    --state-disabled-bg: 210 40% 96%;/* #F1F5F9 */
+
+    /* ── Shadcn semantic mapping ── */
+    --background: var(--neutral-50);
+    --foreground: var(--neutral-900);
+
+    --card: var(--neutral-0);
+    --card-foreground: var(--neutral-900);
+
+    --popover: var(--neutral-0);
+    --popover-foreground: var(--neutral-900);
+
+    --primary: var(--brand-green-600);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: var(--neutral-100);
+    --secondary-foreground: var(--neutral-900);
+
+    --muted: var(--neutral-100);
+    --muted-foreground: var(--neutral-600);
+
+    --accent: var(--brand-green-50);
+    --accent-foreground: var(--brand-green-700);
+
+    --destructive: var(--semantic-danger);
+    --destructive-foreground: 0 0% 100%;
+
+    --border: var(--neutral-200);
+    --input: var(--neutral-300);
+    --ring: var(--brand-blue-600);
+
+    --radius: 0.5rem; /* 8px = radius.sm */
+
+    /* ── Chart series ── */
+    --chart-1: var(--brand-green-600);
+    --chart-2: var(--brand-blue-600);
+    --chart-3: 174 72% 26%;   /* #0F766E teal */
+    --chart-4: var(--semantic-warning);
+    --chart-5: var(--semantic-danger);
+    --chart-6: var(--neutral-600);
+
+    /* ── Sidebar ── */
+    --sidebar-background: var(--neutral-0);
+    --sidebar-foreground: var(--neutral-900);
+    --sidebar-primary: var(--brand-green-600);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: var(--brand-green-50);
+    --sidebar-accent-foreground: var(--brand-green-700);
+    --sidebar-border: var(--neutral-200);
+    --sidebar-ring: var(--brand-blue-600);
+
+    /* ── Shadow tokens ── */
+    --shadow-1: 0 1px 2px hsl(var(--neutral-900) / 0.08);
+    --shadow-2: 0 6px 16px hsl(var(--neutral-900) / 0.12);
+    --shadow-3: 0 16px 40px hsl(var(--neutral-900) / 0.18);
+
+    /* ── Motion tokens ── */
+    --duration-fast: 120ms;
+    --duration-base: 200ms;
+    --duration-slow: 320ms;
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    --ease-emphasis: cubic-bezier(0.2, 0, 0, 0.6);
+
+    /* ── Z-index tokens ── */
+    --z-base: 0;
+    --z-sticky: 30;
+    --z-dropdown: 40;
+    --z-overlay: 50;
+    --z-modal: 60;
+    --z-toast: 70;
+    --z-tooltip: 80;
+
+    /* ── Layout tokens ── */
+    --topbar-height: 64px;
+    --sidebar-width: 280px;
+    --sidebar-width-collapsed: 72px;
+    --bottombar-height: 56px;
+    --appbar-height: 56px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Focus ring utility */
+  .focus-ring {
+    @apply outline-none ring-2 ring-ring ring-offset-2;
+    box-shadow: 0 0 0 4px hsl(var(--brand-blue-600) / 0.22);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0ms !important;
+    transition-duration: 0ms !important;
+  }
+}
